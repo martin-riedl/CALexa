@@ -1,7 +1,5 @@
 #CALexa - An Alexa Skill for accessing CalDAV Calendars  
-[TOC]
 
-## Introduction and Motivation
 Currently Alexa comes with a built-in google calender. If you're devoted to privacy principles and running your own CalDav-Server such as [Baikal](http://sabre.io/), but still go along with latest technology trends, you may not come around the amazon Alexa natural language assistent. This skill gives you the opportunity to easily host your own CalDav skill, e.g. using [Nginx](https://nginx.org) on a [Raspberry Pi](http://www.raspberrypi.org), to make your Calendar transparently accessible for Alexa.
 
 ## Technical Aspects
