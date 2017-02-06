@@ -88,10 +88,3 @@ Alexa-->User:  Es sind folgende Termine auf dem Kalender ...
 
 > - CALexa is still in **beta** state
 > - Thank you @ [Stackedit](https://stackedit.io) to make this markdown such beautiful!
-
-
-[^nginx]: [Nginx](https://nginx.org) is is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server.
-
-[^raspberry]: A [Raspberry Pi](http://www.raspberrypi.org) is a small ARM-based computer which may be used for setting up a small server that hosts your website or cloud services for e.g. calendars, cards, etc.  
-
-----------
