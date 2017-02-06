@@ -82,10 +82,4 @@ Note right of Skill: Skill accesses CalDAV server
 Skill-->Alexa:  String(Es sind folgende Termine auf dem Kalender ...)
 Note right of Alexa: Alexa synthesises NL from string
 Alexa-->User:  Es sind folgende Termine auf dem Kalender ...
-
-
 ```
-> **Note:**
-
-> - CALexa is still in **beta** state
-> - Thank you @ [Stackedit](https://stackedit.io) to make this markdown such beautiful!
