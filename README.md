@@ -75,6 +75,17 @@ GetTodayEventsIntent Was habe ich heute für Ereignisse
 
 ## Interaction Example
 
+```mermaid
+    sequenceDiagram
+    User->>Alexa: Alexa, was ist heute auf dem Kalender?
+    Note right of Alexa: Alexa does NLP
+    Alexa-->>Skill: GetTodayEventsIntent
+	Note right of Skill: Skill accesses CalDAV server
+    Skill-->>Alexa:  String(Es sind folgende Termine auf dem Kalender ...)
+    Note right of Alexa: Alexa synthesises NL from string
+    Alexa->>User:  Es sind folgende Termine auf dem Kalender ...
+```
+
 ```sequence
 User->Alexa: Alexa, was ist heute auf dem Kalender?
 Note right of Alexa: Alexa does NLP
