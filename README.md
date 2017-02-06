@@ -2,7 +2,7 @@
 [TOC]
 
 ## Introduction and Motivation
-Currently Alexa comes with a built-in google calender. If you're devoted to privacy principles and running your own CalDav-Server such as [Baikal](http://sabre.io/), but still go along with latest technology trends, you may not come around the amazon Alexa natural language assistent. This skill gives you the opportunity to easily host your own CalDav skill, e.g. using **Nginx**[^nginx] on a **Raspberry Pi**[^raspberry], to make your Calendar transparently accessible for Alexa.
+Currently Alexa comes with a built-in google calender. If you're devoted to privacy principles and running your own CalDav-Server such as [Baikal](http://sabre.io/), but still go along with latest technology trends, you may not come around the amazon Alexa natural language assistent. This skill gives you the opportunity to easily host your own CalDav skill, e.g. using [Nginx](https://nginx.org) on a [Raspberry Pi](http://www.raspberrypi.org), to make your Calendar transparently accessible for Alexa.
 
 ## Technical Aspects
 This skill uses [Flask-Ask](https://flask-ask.readthedocs.io), a Python micro-framework that simplifies developing Alexa skills. Great work [John Wheeler](https://twitter.com/johnwheeler_)! With a little knowledge of Python and Flask it is very simple to extend.
@@ -74,17 +74,6 @@ GetTodayEventsIntent Was habe ich heute für Ereignisse
 
 
 ## Interaction Example
-
-```mermaid
-    sequenceDiagram
-    User->>Alexa: Alexa, was ist heute auf dem Kalender?
-    Note right of Alexa: Alexa does NLP
-    Alexa-->>Skill: GetTodayEventsIntent
-	Note right of Skill: Skill accesses CalDAV server
-    Skill-->>Alexa:  String(Es sind folgende Termine auf dem Kalender ...)
-    Note right of Alexa: Alexa synthesises NL from string
-    Alexa->>User:  Es sind folgende Termine auf dem Kalender ...
-```
 
 ```sequence
 User->Alexa: Alexa, was ist heute auf dem Kalender?
