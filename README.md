@@ -15,7 +15,7 @@ If you haven't setup your own CalDAV server, I recommend looking at [Jan Karres'
 > - In order to be able to interact with Amazon Alexa, your endpoint either has to provide a certificate from a trusted certificate authority or you have to upload a self-signed certificate in X.509 format.
 
 1) Add the following entry to your Nginx configuration (you may find it at /etc/nginx/sites-available/default):
-```
+```nginx
 location /calexa {
 rewrite ^/calexa/?(.*)$ /$1 break;
     proxy_pass http://localhost:5000;
@@ -29,8 +29,9 @@ rewrite ^/calexa/?(.*)$ /$1 break;
 2) Restart Nginx.
 
 3) Start the CALexa skill as well:
-> python /yourpathtocalexa/calexa.py
-
+```sh
+python /yourpathtocalexa/calexa.py
+```
 Your service will now be available via https://yourdomain/calexa/
 
 
