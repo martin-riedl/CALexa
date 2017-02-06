@@ -40,7 +40,7 @@ Your service will now be available via https://yourdomain/calexa/
 #### Intent Schema
 
 
-```
+```javascript
 {
   "intents": [
     {
