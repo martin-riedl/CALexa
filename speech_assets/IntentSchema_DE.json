@@ -1,7 +1,12 @@
 {
   "intents": [
     {
-      "intent": "GetTodayEventsIntent"
+      "intent": "GetEventsIntent", "slots" : [
+        {"name" : "Date", "type" : "AMAZON.DATE"},
+        {"name" : "EndDate", "type" : "AMAZON.DATE"},        
+        {"name" : "EventSynonyms", "type" : "LIST_OF_EVENT_SYNONYMS"},
+        {"name" : "CalendarSynonyms", "type" : "LIST_OF_CALENDAR_SYNONYMS"}
+      ]
     },
     {
       "intent": "AMAZON.HelpIntent"
