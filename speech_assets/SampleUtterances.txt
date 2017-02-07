@@ -1,0 +1,9 @@
+GetTodayEventsIntent Was ist auf dem Kalender
+GetTodayEventsIntent Was ist heute auf dem Kalender
+GetTodayEventsIntent Gib mir die heutigen Ereignisse
+GetTodayEventsIntent Gib mir die heutigen Termine
+GetTodayEventsIntent Gib mir die Termine für heute
+GetTodayEventsIntent Gib mir die Ereignisse für heute
+GetTodayEventsIntent Was habe ich heute für Termine
+GetTodayEventsIntent Was habe ich heute für Ereignisse
+
