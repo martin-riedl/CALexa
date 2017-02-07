@@ -35,41 +35,35 @@ python /yourpathtocalexa/calexa.py
 Your service will now be available via https://yourdomain/calexa/
 
 
-## Configuration <i class="icon-cog"></i>
+## Configuration via Alexa Skills Kit <i class="icon-cog"></i>
+
+The configuration process is straigt forward, as known by other skills.
+
 
 #### Intent Schema
 
+Copy the content of the [Intent Schema file](https://github.com/martin-riedl/CALexa/blob/master/speech_assets/IntentSchema_DE.json) to the Intent Schema field of the Interaction Model tab while using the Alexa Skills Kit for configuration.
 
-```javascript
-{
-  "intents": [
-    {
-      "intent": "GetTodayEventsIntent"
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-     {
-      "intent": "AMAZON.StopIntent"
-    },
-     {
-      "intent": "AMAZON.CancelIntent"
-    }
-  ]
-}
+
+
+#### Custom Slot Types
+Add all Custom Slot Types defined by the files you can find in the [Custom Slot Types directory](https://github.com/martin-riedl/CALexa/blob/master/speech_assets//customSlotTypes), e.g.: 
+
+Enter Type 
+```
+LIST_OF_CALENDAR_SYNONYMS
+```
+
+Enter Values 
+```
+Kalender
+Terminplaner
+Agenda
 ```
 
 #### Sample Utterances:
-```
-GetTodayEventsIntent Was ist auf dem Kalender
-GetTodayEventsIntent Was ist heute auf dem Kalender
-GetTodayEventsIntent Gib mir die heutigen Ereignisse
-GetTodayEventsIntent Gib mir die heutigen Termine
-GetTodayEventsIntent Gib mir die Termine für heute
-GetTodayEventsIntent Gib mir die Ereignisse für heute
-GetTodayEventsIntent Was habe ich heute für Termine
-GetTodayEventsIntent Was habe ich heute für Ereignisse
-```
+Copy the content of the [Sample Utterance file](https://github.com/martin-riedl/CALexa/blob/master/speech_assets/SampleUtterances_DE.txt) to the Sample Utterances field of the Interaction Model tab while using the Alexa Skills Kit for configuration.
+
 
 
 ## Interaction Example
