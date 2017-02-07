@@ -17,7 +17,6 @@ from datetime import timedelta
 app = Flask(__name__)
 ask = Ask(app, '/')
 
-
 def connectCalendar():
     with open('../conf/config.json') as json_data_file:
         data = json.load(json_data_file)
@@ -54,15 +53,37 @@ def getCalDavEvents(begin, end):
 
   return speech_text
 
-@ask.intent('GetTodayEventsIntent')
-def getTodayEvents():
-    speech_text = getCalDavEvents(datetime.now(), datetime.now() + timedelta(days=2))
+#@ask.intent('GetTodayEventsIntent')
+#def getTodayEvents():
+#    speech_text = getCalDavEvents(datetime.now(), datetime.now() + timedelta(days=1))
+#    print(speech_text)
+#    return statement(speech_text).simple_card('Kalendertermine', speech_text)
+
+@ask.intent('GetEventsIntent',
+    mapping={'date': 'Date', 'enddate' : 'EndDate'}, convert={ 'date': 'date', 'enddate': 'date' })
+def getDateEvents(date, enddate):
+
+    print(str(date) + " " + str(type(date)))
+    print(str(enddate) + " " + str(type(enddate)))
+
+    # in case that default "enddate" does not comply to "date",
+    # the enddate is set to end of the day of "date"
+    if date==None:
+        date=datetime.now()
+
+    if enddate==None or date>=enddate:
+        enddate = datetime(date.year, date.month, date.day+1)
+
+    print(str(date))
+    print(str(enddate))
+
+    speech_text = getCalDavEvents(date, enddate)
     print(speech_text)
     return statement(speech_text).simple_card('Kalendertermine', speech_text)
 
 @ask.intent('SetEventIntent')
 def setEvent(begin,end,summary,location):
-    # TODO 
+    # TODO
 
     summary = summary
     creationDate = "20170210T182145Z"
