@@ -1,9 +1,37 @@
-GetTodayEventsIntent Was ist auf dem Kalender
-GetTodayEventsIntent Was ist heute auf dem Kalender
-GetTodayEventsIntent Gib mir die heutigen Ereignisse
-GetTodayEventsIntent Gib mir die heutigen Termine
-GetTodayEventsIntent Gib mir die Termine für heute
-GetTodayEventsIntent Gib mir die Ereignisse für heute
-GetTodayEventsIntent Was habe ich heute für Termine
-GetTodayEventsIntent Was habe ich heute für Ereignisse
+GetEventsIntent Welche {EventSynonyms} habe ich am {Date} auf dem {CalendarSynonyms}
+GetEventsIntent Welche {EventSynonyms} habe ich am {Date} 
+GetEventsIntent Welche {EventSynonyms} habe ich {Date}
+
+GetEventsIntent nach meinen {EventSynonyms}
+GetEventsIntent nach meinen {EventSynonyms} zwischen {Date} und {EndDate}
+GetEventsIntent nach meinen {EventSynonyms} vom {Date} bis zum {EndDate}
+GetEventsIntent nach meinen {EventSynonyms} vom {Date} zum {EndDate}
+
+GetEventsIntent Welche {EventSynonyms} ich am {Date} auf dem {CalendarSynonyms} habe 
+GetEventsIntent Welche {EventSynonyms} ich am {Date} habe 
+GetEventsIntent Welche {EventSynonyms} ich habe 
+
+GetEventsIntent Welche {EventSynonyms} ich vom {Date} bis zum {EndDate} auf dem {CalendarSynonyms} habe
+GetEventsIntent Welche {EventSynonyms} ich vom {Date} bis zum {EndDate} auf dem {CalendarSynonyms} habe
+
+GetEventsIntent Welche {EventSynonyms} stehen {Date} an
+GetEventsIntent Welche {EventSynonyms} stehen zwischen dem {Date} und dem {EndDate} an
+GetEventsIntent Welche {EventSynonyms} stehen im {CalendarSynonyms} zwischen dem {Date} und dem {EndDate} an
+
+GetEventsIntent Welche {EventSynonyms} stehen im {CalendarSynonyms} zwischen dem {Date} und dem {EndDate} 
+
+GetEventsIntent Was ist auf dem {CalendarSynonyms}
+GetEventsIntent Was ist {Date} auf dem {CalendarSynonyms}
+GetEventsIntent Gib mir die {EventSynonyms} {Date}
+
+GetEventsIntent Gib mir die {EventSynonyms} für {Date}
+GetEventsIntent Gib mir die Ereignisse für {Date}
+GetEventsIntent Was habe ich {Date} für {EventSynonyms}
+GetEventsIntent Was habe ich für {EventSynonyms} {Date}
+
+GetEventsIntent Was habe ich am {Date} für {EventSynonyms}
+GetEventsIntent Was habe ich am {Date} für {EventSynonyms} im {CalendarSynonyms}
+GetEventsIntent Was habe ich für {EventSynonyms}
+  
+GetEventsIntent Welche Termine habe ich zwischen dem {Date} und dem {EndDate}
 
