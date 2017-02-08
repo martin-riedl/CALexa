@@ -81,35 +81,47 @@ def getDateEvents(date, enddate):
     print(speech_text)
     return statement(speech_text).simple_card('Kalendertermine', speech_text)
 
-@ask.intent('SetEventIntent')
-def setEvent(begin,end,summary,location):
-    # TODO
+@ask.intent('SetEventIntent',
+    mapping={'date': 'Date', 'time': 'Time', 'duration' : 'Duration' },
+    convert={'date': 'date', 'time':'time', 'duration' : 'timedelta'})
+def setEvent(date, time, duration):
+    d = datetime.combine(date,time)
 
-    summary = summary
-    creationDate = "20170210T182145Z"
-    startDate = "20170212T170000Z"
-    endDate = "20170212T180000Z"
-    vcal = """BEGIN:VCALENDAR
-    VERSION:2.0
-    PRODID:-//Example Corp.//CalDAV Client//EN
-    BEGIN:VEVENT
-    """
-    vcal += "UID:1234567890"
+    print(date)
+    print(time)
+    print(duration)
+
+    creationDate = datetime.now().strftime("%Y%m%dT%H%M%SZ")
+    startDate = d.strftime("%Y%m%dT%H%M%SZ")
+    endDate = (d + duration).strftime("%Y%m%dT%H%M%SZ")
+
+    vcal = "BEGIN:VCALENDAR"+"\n"
+    vcal += "VERSION:2.0"+"\n"
+    vcal += "PRODID:-//Example Corp.//CalDAV Client//EN"+"\n"
+    vcal += "BEGIN:VEVENT"+"\n"
+    vcal += "UID:1234567890"+"\n"
     vcal += "DTSTAMP:" + creationDate +"\n"
     vcal += "DTSTART:" + startDate +"\n"
     vcal += "DTEND:" + endDate +"\n"
-    vcal += "SUMMARY:" + summary
-    vcal += """
-    END:VEVENT
-    END:VCALENDAR
-    """
+    vcal += "SUMMARY:" + "FooBar"+"\n"
+    vcal += "END:VEVENT"+"\n"
+    vcal += "END:VCALENDAR"
+
+    print(vcal)
+
 
     calendars = connectCalendar()
-
+    speech_text = "Termin konnte nicht eingetragen werden!"
 
     if len(calendars) > 0:
         calendar = calendars[0]
         event = calendar.add_event(vcal)
+        speech_text = "Termin wurde eingetragen!"
+
+
+    return statement(speech_text).simple_card('Kalendertermine', speech_text)
+
+
 
 
 #print getTodayEvents()
