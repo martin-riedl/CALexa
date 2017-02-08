@@ -35,3 +35,9 @@ GetEventsIntent Was habe ich für {EventSynonyms}
   
 GetEventsIntent Welche Termine habe ich zwischen dem {Date} und dem {EndDate}
 
+
+SetEventIntent einen neuen Termin für den {Date} um {Time} für {Duration} anzulegen 
+SetEventIntent einen neuen Termin für den {Date} um {Time} für {Duration} hinzuzufügen  
+
+
+
