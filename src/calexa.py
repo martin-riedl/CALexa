@@ -84,44 +84,54 @@ def getDateEvents(date, enddate):
 @ask.intent('SetEventIntent',
     mapping={'date': 'Date', 'time': 'Time', 'duration' : 'Duration' },
     convert={'date': 'date', 'time':'time', 'duration' : 'timedelta'})
-def setEvent(date, time, duration):
-    d = datetime.combine(date,time)
-
+def setEvent(date, time, duration, eventtype, location):
     print(date)
     print(time)
     print(duration)
-
-    creationDate = datetime.now().strftime("%Y%m%dT%H%M%SZ")
-    startDate = d.strftime("%Y%m%dT%H%M%SZ")
-    endDate = (d + duration).strftime("%Y%m%dT%H%M%SZ")
-
-    vcal = "BEGIN:VCALENDAR"+"\n"
-    vcal += "VERSION:2.0"+"\n"
-    vcal += "PRODID:-//Example Corp.//CalDAV Client//EN"+"\n"
-    vcal += "BEGIN:VEVENT"+"\n"
-    vcal += "UID:1234567890"+"\n"
-    vcal += "DTSTAMP:" + creationDate +"\n"
-    vcal += "DTSTART:" + startDate +"\n"
-    vcal += "DTEND:" + endDate +"\n"
-    vcal += "SUMMARY:" + "FooBar"+"\n"
-    vcal += "END:VEVENT"+"\n"
-    vcal += "END:VCALENDAR"
-
-    print(vcal)
-
-
-    calendars = connectCalendar()
     speech_text = "Termin konnte nicht eingetragen werden!"
 
-    if len(calendars) > 0:
-        calendar = calendars[0]
-        event = calendar.add_event(vcal)
-        speech_text = "Termin wurde eingetragen!"
+    try:
 
+        if date==None:
+            date = datetime.today()
+
+        if duration==None:
+            duration = timedelta(hours=1)
+
+        d = datetime.combine(date,time)
+
+        creationDate = datetime.now().strftime("%Y%m%dT%H%M%SZ")
+        startDate = d.strftime("%Y%m%dT%H%M%SZ")
+        endDate = (d + duration).strftime("%Y%m%dT%H%M%SZ")
+
+        vcal = "BEGIN:VCALENDAR"+"\n"
+        vcal += "VERSION:2.0"+"\n"
+        vcal += "PRODID:-//Example Corp.//CalDAV Client//EN"+"\n"
+        vcal += "BEGIN:VEVENT"+"\n"
+        vcal += "UID:1234567890"+"\n"
+        vcal += "DTSTAMP:" + creationDate +"\n"
+        vcal += "DTSTART:" + startDate +"\n"
+        vcal += "DTEND:" + endDate +"\n"
+        vcal += "SUMMARY:" + eventtype + "\n"
+        vcal += "END:VEVENT"+"\n"
+        vcal += "END:VCALENDAR"
+
+        print(vcal)
+
+        calendars = connectCalendar()
+
+        if len(calendars) > 0:
+            calendar = calendars[0]
+            event = calendar.add_event(vcal)
+            speech_text = "Termin wurde eingetragen!"
+
+    except TypeError as te:
+        print(te)
+        pass
+
+    print(speech_text)
 
     return statement(speech_text).simple_card('Kalendertermine', speech_text)
-
-
 
 
 #print getTodayEvents()

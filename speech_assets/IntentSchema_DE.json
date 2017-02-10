@@ -15,7 +15,8 @@
         {"name" : "Duration", "type" : "AMAZON.DURATION"},
         {"name" : "EndDate", "type" : "AMAZON.DATE"},        
         {"name" : "EventSynonyms", "type" : "LIST_OF_EVENT_SYNONYMS"},
-        {"name" : "CalendarSynonyms", "type" : "LIST_OF_CALENDAR_SYNONYMS"}
+        {"name" : "CalendarSynonyms", "type" : "LIST_OF_CALENDAR_SYNONYMS"},
+        {"name" : "eventtype", "type" : "LIST_OF_EVENT_TYPES"} 
       ]
     },
     {
